@@ -14,7 +14,7 @@ $accessTokenSecret="aIyhrxNLFMBwuRNrFTIYOeWa2LQ5UKKZXjbAJfNSVQ";
 
 $twitter = new Twitter($consumerKey, $consumerSecret, $accessToken, $accessTokenSecret);
 
-$channel = $twitter->load(Twitter::ALL);
+$channel = $twitter->load(Twitter::ME_AND_FRIENDS);
 
 ?>
 <!doctype html>

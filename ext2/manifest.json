@@ -1,0 +1,14 @@
+{
+  "name": "MMy extension",
+  "version": "1.0",
+  "permissions": [
+    "tabs", "http://*/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["http://www.nytimes.com/"],
+      "js": ["myscript.js"],
+      "run_at": "document_end"
+    }
+  ]
+}

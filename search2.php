@@ -43,7 +43,7 @@ if($i>6)
   break;
 
 }
-
+//$response .= "</div>";
 //output the response
 echo $response;
 ?>

@@ -1,9 +1,0 @@
-<?php
-
-$response = "Sunil Response";
-echo $response;
-?>
-
-
-
-

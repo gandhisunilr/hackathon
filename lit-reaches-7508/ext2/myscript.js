@@ -1,5 +1,7 @@
+try{
+
+document.body.innerHTML += "<div id = \"tweettimes\" style=\"position:fixed;top:30px;right:10px;height:425px; width:350px;opacity:0.8;border:5px solid black; white-space: nowrap; overflow: auto; background:#ffc; z-index:20000; \"></div>";
 document.getElementById("mastheadLogo").src = "http://localhost/font.jpg";
-document.body.innerHTML += "<div id = \"tweettimes\" style=\"position:fixed;top:10px;right:10px;height:425px; width:350px;opacity:0.8;border:5px solid black; white-space: nowrap; overflow: auto; background:#ffc; z-index:20000; \"></div>";
 
 var stories = document.getElementsByClassName("story"); 
 for(i=0;i<stories.length;i++) {
@@ -20,11 +22,17 @@ for(i=0;i<stories.length;i++) {
 		xmlhttp.open("GET","http://gundeepbindra.com/hackny/search2.php?words="+str,false);
 		xmlhttp.send();
 		document.getElementById("tweettimes").innerHTML= xmlhttp.responseText;
+		document.getElementById("tweettimes").innerHTML += "<button src='#' onclick=\"document.getElementById('tweettimes').style.visibility = 'hidden';\">hide</button>";
 		//document.body.innerHTML += xmlhttp.responseText;
 		//document.getElementsByClassName("image")[0].innerHTML = xmlhttp.responseText;
 	};
 
-
     }
   }
+}
+
+}
+catch(err){
+	document.body.innerHTML += "<div id = \"tweettimes\" style=\"position:fixed;top:30px;right:10px;height:425px; width:350px;opacity:0.8;border:5px solid black; white-space: nowrap; overflow: auto; background:#ffc; z-index:20000; \"></div>";
+	document.getElementById("tweettimes").innerHTML += "<button src='#' onclick=\"document.getElementById('tweettimes').style.visibility = 'hidden';\">hide</button>";
 }

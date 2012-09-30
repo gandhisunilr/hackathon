@@ -22,19 +22,25 @@ $searchstr = (string) $FUCKINGSTRING;
 $results = $twitter->search($searchstr);
 echo "<ul>";
 
+$response .= "<h1 >THE TWEET TIMES</h1><hr>";
+$i=0;
+
 foreach ($results as $result){
+$i=$i+1;
+
 $response .= "<li><a href=\"http://twitter.com/\"";
 $response .= $result->from_user;
 $response .= ">";
-$response .= "<img src=\"".htmlspecialchars($result->profile_image_url);
-$response .= "\""."</img>";
+$response .= "<b><h4>";
 $response .= $result->from_user;
-$response .= "</a>";
+$response .= "</h4></b></a>";
 $response .=  Twitter::clickable($result->text);
 $response .= "<small>at";
 $response .=  date("j.n.Y H:i", strtotime($result->created_at)) ;
 $response .= "</small>:";
-$response .= "</li>";
+$response .= "</li><br><br>";
+if($i>6)
+  break;
 
 }
 
